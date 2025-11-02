@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>T&D Autocare | 专业汽车维修与保养</title>
+    <meta name="description" content="T&D Autocare——专业汽车维修、保养、钣金喷漆与轮胎服务。在线预约，透明报价，品质保证。">
+    <link rel="icon" href="./logo.png" type="image/png" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+      body {margin:0;font-family:"Noto Sans",sans-serif;color:#222;line-height:1.6;background:#fff;}
+      header{background:#0a0a0a;color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+      header img{height:36px;margin-right:8px;}
+      .brand{display:flex;align-items:center;text-decoration:none;color:#fff;font-weight:600;}
+      nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0;}
+      nav a{text-decoration:none;color:#fff;font-weight:500;}
+      .hero{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;padding:60px 20px;background:#f5f5f5;}
+      .hero-copy{max-width:500px;}
+      .btn{display:inline-block;padding:10px 20px;border-radius:4px;text-decoration:none;margin:5px 8px 0 0;cursor:pointer;}
+      .btn-primary{background:#007aff;color:#fff;}
+      .btn-outline{border:2px solid #007aff;color:#007aff;}
+      .section{padding:60px 20px;}
+      .section-accent{background:#fafafa;}
+      h2.section-title{text-align:center;margin-bottom:30px;}
+      form{max-width:520px;margin:0 auto;background:#fff;padding:20px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+      label{display:block;margin-bottom:15px;font-weight:600;}
+      input,select,textarea{width:100%;padding:10px;margin-top:6px;border:1px solid #ccc;border-radius:4px;font-size:15px;}
+      .form-actions{text-align:center;margin-top:10px;}
+      #form-status{margin-top:10px;color:#007aff;font-weight:600;}
+      footer{background:#0a0a0a;color:#ddd;text-align:center;padding:20px 10px;margin-top:40px;font-size:14px;}
+      .badges{list-style:none;padding:0;display:flex;gap:10px;flex-wrap:wrap;margin-top:15px;color:#007aff;font-weight:600;}
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="brand"><img src="./logo.png" alt="T&D Autocare"/><span>T&D Autocare</span></a>
+      <nav>
+        <ul>
+          <li><a href="#services">服务项目</a></li>
+          <li><a href="#about">关于我们</a></li>
+          <li><a href="#contact">联系我们</a></li>
+          <li><a href="#booking" class="btn btn-primary">在线预约</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>专业汽车维修与保养</h1>
+        <p>透明报价 · 原厂标准 · 快速交付。每一次服务，都让您更放心。</p>
+        <a class="btn btn-primary" href="#booking">立即预约</a>
+        <a class="btn btn-outline" href="#services">了解服务</a>
+        <ul class="badges">
+          <li>一年/20,000公里质保</li><li>当天快修</li><li>原厂级检测</li>
+        </ul>
+      </div>
+      <img src="./hero_garage.png" alt="汽修车间" style="max-width:450px;width:100%;margin-top:20px;">
+    </section>
+
+    <section id="booking" class="section section-accent">
+      <h2 class="section-title">在线预约</h2>
+      <form id="booking-form">
+        <label>姓名
+          <input type="text" name="name" required placeholder="您的姓名">
+        </label>
+        <label>手机
+          <input type="tel" name="phone" required placeholder="例如 13800000000" pattern="^\\s*1\\d{10}\\s*$">
+        </label>
+        <label>车型
+          <input type="text" name="car" required placeholder="品牌 / 车型 / 年款">
+        </label>
+        <label>日期
+          <input type="date" name="date" required>
+        </label>
+        <label>服务类型
+          <select name="service" required>
+            <option value="" disabled selected>请选择</option>
+            <option>保养服务</option>
+            <option>发动机/变速箱</option>
+            <option>刹车与底盘</option>
+            <option>轮胎与四轮定位</option>
+            <option>新能源专项</option>
+          </select>
+        </label>
+        <label>备注
+          <textarea name="note" rows="3" placeholder="简单描述您的需求或故障现象"></textarea>
+        </label>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">提交预约</button>
+          <p id="form-status"></p>
+        </div>
+      </form>
+    </section>
+
+    <section id="about" class="section">
+      <h2 class="section-title">关于 T&D Autocare</h2>
+      <p style="max-width:700px;margin:0 auto;text-align:center;">
+        我们是一家以“专业、透明、守时”为宗旨的现代化汽修中心。
+        团队拥有10年以上品牌4S店经验，配备原厂级诊断设备与工装，严格执行标准化流程。
+      </p>
+    </section>
+
+    <section id="contact" class="section section-accent">
+      <h2 class="section-title">联系我们</h2>
+      <p style="text-align:center;">
+        电话：<a href="tel:+61297928828">+61 2 9792 8828</a><br>
+        地址：78 Gibson Ave, Padstow NSW 2211, Australia<br>
+        营业时间：Mon–Fri 9:00–17:00, Sat 9:00–14:00
+      </p>
+      <div style="text-align:center;margin-top:20px;">
+        <iframe
+          title="T&D Autocare Location"
+          loading="lazy"
+          style="border:0;width:90%;max-width:600px;height:300px;border-radius:8px;"
+          src="https://www.google.com/maps?q=78+Gibson+Ave+Padstow+NSW+2211+Australia&output=embed"></iframe>
+      </div>
+    </section>
+
+    <footer>© <span id="year"></span> T&D Autocare | 诚信经营 · 专业服务</footer>
+
+    <script>
+      // 设置年份
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Supabase 连接配置
+      const supabaseUrl = 'https://mgrorhbschtyrdrekfhb.supabase.co';
+      const supabaseKey = 'sb_publishable_bbYg4Bl2F5uHC_3XqdH2RA_NOnp3wfc';
+      const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+      // 表单提交逻辑
+      const bookingForm = document.getElementById('booking-form');
+      const statusEl = document.getElementById('form-status');
+
+      bookingForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        statusEl.textContent = '提交中，请稍候...';
+
+        const formData = new FormData(bookingForm);
+        const record = {
+          date: formData.get('date'),
+          time: '09:30:00',
+          car: formData.get('car') || '未填写',
+          mileage: '',
+          plate: '',
+          project: formData.get('service'),
+          price: null,
+          contact: `${formData.get('name')} / ${formData.get('phone')}`,
+          note: formData.get('note') || ''
+        };
+
+        try {
+          const { error } = await supabaseClient.from('tasks').insert([record]);
+          if (error) throw error;
+          statusEl.textContent = '✅ 提交成功！我们会尽快与您联系。';
+          bookingForm.reset();
+          setTimeout(() => statusEl.textContent = '', 3000);
+        } catch (err) {
+          console.error(err);
+          statusEl.textContent = '❌ 提交失败，请稍后重试。';
+        }
+      });
+    </script>
+  </body>
+</html>
