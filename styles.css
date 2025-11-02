@@ -1,0 +1,15 @@
+body {font-family: 'Noto Sans', sans-serif;margin:0;color:#222;background:#f9f9f9;}
+header {background:#111;color:#fff;padding:16px;text-align:center;position:sticky;top:0;}
+.brand-logo {height:40px;margin-right:8px;vertical-align:middle;}
+.lang-toggle {float:right;background:#007aff;border:none;color:#fff;padding:8px 16px;border-radius:4px;cursor:pointer;}
+.hero {padding:60px 20px;text-align:center;}
+.section {padding:40px 20px;}
+.container {max-width:1000px;margin:0 auto;}
+.grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;}
+.card {background:#fff;padding:16px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+.form {background:#fff;padding:20px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+.form-row {display:flex;gap:12px;margin-bottom:12px;}
+input,textarea {padding:8px;border:1px solid #ccc;border-radius:4px;width:100%;}
+.btn-primary {background:#007aff;color:#fff;border:none;padding:10px 20px;border-radius:4px;cursor:pointer;}
+.map-float-btn {position:fixed;right:24px;bottom:24px;width:56px;height:56px;background:#007aff;color:#fff;font-size:28px;line-height:56px;text-align:center;border-radius:50%;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.3);transition:0.3s;z-index:999;}
+.map-float-btn:hover {background:#005fcc;transform:scale(1.05);}
