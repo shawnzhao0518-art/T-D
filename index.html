@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" href="./logo.png" type="image/png" />
-
-    <!-- ✅ 新增：Supabase SDK -->
+    
+    <!-- ✅ Supabase JS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   </head>
   <body>
@@ -217,7 +217,10 @@
       </div>
     </footer>
 
-    <!-- ✅ 新增：Supabase 写入逻辑 -->
+    <!-- ✅ 保留原 app.js -->
+    <script type="module" src="./app.js"></script>
+
+    <!-- ✅ Supabase 表单写入脚本 -->
     <script type="module">
       const supabaseUrl = 'https://mgrorhbschtyrdrekfhb.supabase.co';
       const supabaseKey = 'sb_publishable_bbYg4Bl2F5uHC_3XqdH2RA_NOnp3wfc';
@@ -257,8 +260,5 @@
         }
       });
     </script>
-
-    <!-- 保留你原本的引用 -->
-    <script type="module" src="./app.js"></script>
   </body>
 </html>
