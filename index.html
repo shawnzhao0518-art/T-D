@@ -34,9 +34,14 @@
               <a class="btn btn-primary" href="#booking" data-i18n="hero_cta_primary">Book Now</a>
               <a class="btn btn-outline" href="#services" data-i18n="hero_cta_secondary">View Services</a>
             </div>
+            <ul class="badges">
+              <li data-i18n="hero_badge1">1-year / 20,000 km Warranty</li>
+              <li data-i18n="hero_badge2">Same-day Quick Service</li>
+              <li data-i18n="hero_badge3">OEM-level Diagnostics</li>
+            </ul>
           </div>
           <div class="hero-media">
-            <img src="./hero_garage.png" alt="Modern car workshop" />
+            <img src="./hero_garage.png" alt="Workshop" />
           </div>
         </div>
       </section>
@@ -45,11 +50,31 @@
         <div class="container">
           <h2 data-i18n="services_title">Our Services</h2>
           <div class="grid services-grid">
-            <article class="card"><img src="./service_maintenance.png" alt="Maintenance"><h3 data-i18n="svc_maint_title">Maintenance</h3><p data-i18n="svc_maint_desc">Oil & filter change, full inspection, diagnostic check.</p></article>
-            <article class="card"><img src="./service_engine.png" alt="Engine"><h3 data-i18n="svc_engine_title">Engine & Transmission</h3><p data-i18n="svc_engine_desc">Diagnostics, repairs, and overhauls for power systems.</p></article>
-            <article class="card"><img src="./service_brake.png" alt="Brake"><h3 data-i18n="svc_brake_title">Brakes & Suspension</h3><p data-i18n="svc_brake_desc">Brake pad/rotor replacement, suspension alignment.</p></article>
-            <article class="card"><img src="./service_tire.png" alt="Tire"><h3 data-i18n="svc_tire_title">Tires & Wheel Alignment</h3><p data-i18n="svc_tire_desc">Tire replacement, balancing, and alignment.</p></article>
-            <article class="card"><img src="./service_ev.png" alt="EV"><h3 data-i18n="svc_ev_title">EV Services</h3><p data-i18n="svc_ev_desc">High-voltage inspection, battery health evaluation.</p></article>
+            <article class="card">
+              <img src="./service_maintenance.png" alt="Maintenance" />
+              <h3 data-i18n="svc_maint_title">Maintenance</h3>
+              <p data-i18n="svc_maint_desc">Oil & filter change, full inspection, diagnostic check.</p>
+            </article>
+            <article class="card">
+              <img src="./service_engine.png" alt="Engine" />
+              <h3 data-i18n="svc_engine_title">Engine & Transmission</h3>
+              <p data-i18n="svc_engine_desc">Diagnostics, repairs, and overhauls for power systems.</p>
+            </article>
+            <article class="card">
+              <img src="./service_brake.png" alt="Brake" />
+              <h3 data-i18n="svc_brake_title">Brakes & Suspension</h3>
+              <p data-i18n="svc_brake_desc">Brake pad/rotor replacement, suspension alignment.</p>
+            </article>
+            <article class="card">
+              <img src="./service_tire.png" alt="Tire" />
+              <h3 data-i18n="svc_tire_title">Tires & Wheel Alignment</h3>
+              <p data-i18n="svc_tire_desc">Tire replacement, balancing, and alignment.</p>
+            </article>
+            <article class="card">
+              <img src="./service_ev.png" alt="EV" />
+              <h3 data-i18n="svc_ev_title">EV Services</h3>
+              <p data-i18n="svc_ev_desc">High-voltage inspection, battery health evaluation.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -59,15 +84,33 @@
           <h2 data-i18n="booking_title">Online Booking</h2>
           <form id="booking-form" class="form card" novalidate>
             <div class="form-row">
-              <label><span data-i18n="form_phone_label">Phone</span><input type="tel" name="phone" required placeholder="e.g. 0400000000" /></label>
-              <label><span data-i18n="form_car_label">Car Model</span><input type="text" name="car" required placeholder="Brand / Model / Year" /></label>
+              <label>
+                <span data-i18n="form_phone_label">Phone</span>
+                <input type="tel" name="phone" required placeholder="e.g. 0400000000" />
+              </label>
+              <label>
+                <span data-i18n="form_car_label">Car Model</span>
+                <input type="text" name="car" required placeholder="Brand / Model / Year" />
+              </label>
             </div>
             <div class="form-row">
-              <label><span data-i18n="form_date_label">Date</span><input type="date" name="date" required /></label>
-              <label><span data-i18n="form_time_label">Time</span><input type="time" name="time" required /></label>
+              <label>
+                <span data-i18n="form_date_label">Date</span>
+                <input type="date" name="date" required />
+              </label>
+              <label>
+                <span data-i18n="form_time_label">Time</span>
+                <input type="time" name="time" required />
+              </label>
             </div>
-            <label><span data-i18n="form_service_label">Service Type</span><input type="text" name="service" required placeholder="Enter service type" /></label>
-            <label><span data-i18n="form_note_label">Notes</span><textarea name="note" rows="3" placeholder="Describe your issue or request"></textarea></label>
+            <label>
+              <span data-i18n="form_service_label">Service Type</span>
+              <input type="text" name="service" required placeholder="Enter service type" />
+            </label>
+            <label>
+              <span data-i18n="form_note_label">Notes</span>
+              <textarea name="note" rows="3" placeholder="Describe your issue or request"></textarea>
+            </label>
             <div class="form-actions">
               <button class="btn btn-primary" type="submit" data-i18n="form_submit">Submit</button>
               <p id="form-status" role="status" aria-live="polite"></p>
@@ -105,9 +148,7 @@
       </div>
     </footer>
 
-    <!-- Floating Google Maps Button -->
-    <a href="https://www.google.com/maps/dir/?api=1&destination=78+Gibson+Ave+Padstow+NSW+2211+Australia" 
-       target="_blank" class="map-float-btn" aria-label="Navigate to T&D Autocare">📍</a>
+    <a href="https://www.google.com/maps/dir/?api=1&destination=78+Gibson+Ave+Padstow+NSW+2211+Australia" target="_blank" class="map-float-btn" aria-label="Navigate to T&D Autocare">📍</a>
 
     <script type="module" src="./app.js"></script>
   </body>
