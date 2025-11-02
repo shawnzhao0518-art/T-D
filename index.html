@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" href="./logo.png" type="image/png" />
+
+    <!-- ✅ 新增：Supabase SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   </head>
   <body>
@@ -40,8 +42,59 @@
     </header>
 
     <main id="main">
-      <!-- 保留原 hero, services, booking, about, contact 全部内容不变 -->
-      <!-- 👇👇 以下省略你的原始主体内容，保持原样 👇👇 -->
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1 data-i18n="hero_title">专业汽车维修与保养</h1>
+            <p data-i18n="hero_desc">透明报价 · 原厂标准 · 快速交付。每一次服务，都让您更放心。</p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#booking" data-i18n="hero_cta_primary">立即预约</a>
+              <a class="btn btn-outline" href="#services" data-i18n="hero_cta_secondary">了解服务</a>
+            </div>
+            <ul class="badges">
+              <li data-i18n="hero_badge1">一年/20,000公里质保</li>
+              <li data-i18n="hero_badge2">当天快修</li>
+              <li data-i18n="hero_badge3">原厂级检测</li>
+            </ul>
+          </div>
+          <div class="hero-media">
+            <img src="./hero_garage.png" alt="整洁的绿色主题汽修车间与技师" />
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="container">
+          <h2 class="section-title" data-i18n="services_title">服务项目</h2>
+          <div class="grid services-grid">
+            <article class="card">
+              <img src="./service_maintenance.png" alt="保养图标" />
+              <h3 data-i18n="svc_maint_title">保养服务</h3>
+              <p data-i18n="svc_maint_desc">更换机油三滤、全车检查、电脑诊断。</p>
+            </article>
+            <article class="card">
+              <img src="./service_engine.png" alt="发动机图标" />
+              <h3 data-i18n="svc_engine_title">发动机/变速箱</h3>
+              <p data-i18n="svc_engine_desc">疑难故障检修、动力系统维护与翻新。</p>
+            </article>
+            <article class="card">
+              <img src="./service_brake.png" alt="刹车图标" />
+              <h3 data-i18n="svc_brake_title">刹车与底盘</h3>
+              <p data-i18n="svc_brake_desc">刹车片/盘更换、减震与悬架校正。</p>
+            </article>
+            <article class="card">
+              <img src="./service_tire.png" alt="轮胎图标" />
+              <h3 data-i18n="svc_tire_title">轮胎与四轮定位</h3>
+              <p data-i18n="svc_tire_desc">轮胎更换、动平衡、四轮定位。</p>
+            </article>
+            <article class="card">
+              <img src="./service_ev.png" alt="新能源图标" />
+              <h3 data-i18n="svc_ev_title">新能源专项</h3>
+              <p data-i18n="svc_ev_desc">高压系统检测、电池健康评估。</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
       <section id="booking" class="section section-accent">
         <div class="container">
@@ -90,7 +143,62 @@
         </div>
       </section>
 
-      <!-- 👆👆 你的原内容继续保持原样 👆👆 -->
+      <section id="about" class="section">
+        <div class="container about-grid">
+          <div>
+            <h2 class="section-title" data-i18n="about_title">关于 T&D Autocare</h2>
+            <p data-i18n="about_desc">我们是一家以"专业、透明、守时"为宗旨的现代化汽修中心。团队拥有10年以上品牌4S店经验，配备原厂级诊断设备与工装，严格执行标准化流程。</p>
+            <ul class="list-check">
+              <li data-i18n="about_check1">标准化接车与复检</li>
+              <li data-i18n="about_check2">维修过程全程可视</li>
+              <li data-i18n="about_check3">配件来源可追溯</li>
+            </ul>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <span class="num" data-count="5000">0</span>
+              <span class="label" data-i18n="stats_label_vehicles">+ 累计服务车辆</span>
+            </div>
+            <div class="stat">
+              <span class="num" data-count="98">0</span>
+              <span class="label" data-i18n="stats_label_satisfaction">% 客户满意度</span>
+            </div>
+            <div class="stat">
+              <span class="num" data-count="12">0</span>
+              <span class="label" data-i18n="stats_label_experience">年 行业经验</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container contact-grid">
+          <div>
+            <h2 class="section-title" data-i18n="contact_title">联系我们</h2>
+            <ul class="contact-list">
+              <li><strong data-i18n="contact_phone_label">电话：</strong><a href="tel:+61297928828">+61 2 9792 8828</a></li>
+              <li><strong data-i18n="contact_address_label">地址：</strong><span data-i18n="contact_address">78 Gibson Ave, Padstow NSW 2211, Australia</span></li>
+              <li><strong data-i18n="contact_hours_label">营业时间：</strong>
+                <ul>
+                  <li data-i18n="contact_hours_monfri">Monday – Friday: 9:00 AM – 5:00 PM</li>
+                  <li data-i18n="contact_hours_sat">Saturday: 9:00 AM – 2:00 PM</li>
+                  <li data-i18n="contact_hours_sun">Sunday: Closed</li>
+                </ul>
+              </li>
+              <li><strong data-i18n="contact_payment_label">支付方式：</strong><span data-i18n="contact_payment">Apple Pay，及主要银行卡</span></li>
+            </ul>
+            <a class="btn btn-outline" href="#booking" data-i18n="contact_cta">预约到店</a>
+          </div>
+          <div class="map-wrap">
+            <iframe
+              title="T&D Autocare Location"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=78+Gibson+Ave+Padstow+NSW+2211+Australia&output=embed">
+            </iframe>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -109,7 +217,7 @@
       </div>
     </footer>
 
-    <!-- ✅ 在原有结构中插入 Supabase 表单写入逻辑 -->
+    <!-- ✅ 新增：Supabase 写入逻辑 -->
     <script type="module">
       const supabaseUrl = 'https://mgrorhbschtyrdrekfhb.supabase.co';
       const supabaseKey = 'sb_publishable_bbYg4Bl2F5uHC_3XqdH2RA_NOnp3wfc';
@@ -142,12 +250,15 @@
           if (error) throw error;
           statusEl.textContent = '✅ 提交成功！我们会尽快与您联系。';
           bookingForm.reset();
-          setTimeout(() => statusEl.textContent = '', 3000);
+          setTimeout(() => (statusEl.textContent = ''), 3000);
         } catch (err) {
           console.error(err);
           statusEl.textContent = '❌ 提交失败，请稍后重试。';
         }
       });
     </script>
+
+    <!-- 保留你原本的引用 -->
+    <script type="module" src="./app.js"></script>
   </body>
 </html>
